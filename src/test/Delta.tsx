@@ -1,12 +1,12 @@
 import React from 'react'
 import { useReducer } from './store/store'
-import { div2 } from './store/reducer2'
+import { delta } from './store/delta'
 
-export const Div2 = ({ init }: { init: number }) => {
-  const [state, dispatch] = useReducer(div2, init)
+export const Delta = ({ init }: { init: number }) => {
+  const [state, dispatch] = useReducer(delta, init)
   return (
     <div>
-      div2:{state}
+      delta:{state}
       <button onClick={() => dispatch({ type: 'change' })}>change</button>
     </div>
   )

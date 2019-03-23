@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Div1 } from './div1'
-import { Div2 } from './div2'
+import { Current } from './Current'
+import { Delta } from './Delta'
+import { initState } from './store/store'
 
 const App = () => {
   return (
     <div>
-      <Div1 init={100} />
-      <Div2 init={1} />
+      <Current init={initState.current} />
+      <Delta init={initState.delta} />
     </div>
   )
 }

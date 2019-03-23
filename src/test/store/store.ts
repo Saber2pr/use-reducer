@@ -1,8 +1,8 @@
 import { createStore } from '../../core/createStore'
 
-const state = {
-  div1: 100,
-  div2: 1
+export const initState = {
+  current: 100,
+  delta: 1
 }
 
-export const [getState, useReducer] = createStore(state)
+export const [getState, useReducer] = createStore(initState)

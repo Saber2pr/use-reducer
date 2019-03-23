@@ -1,6 +1,6 @@
 import { getState } from './store'
 
-export function div1(
+export function current(
   state: number,
   action: {
     type: 'up' | 'down'
@@ -8,9 +8,9 @@ export function div1(
 ) {
   switch (action.type) {
     case 'up':
-      return state + getState().div2
+      return state + getState().delta
     case 'down':
-      return state - getState().div2
+      return state - getState().delta
     default:
       return state
   }
