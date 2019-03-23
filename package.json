@@ -1,0 +1,43 @@
+{
+  "name": "@saber2pr/use-reducer",
+  "version": "0.0.1",
+  "description": "useReducer & getState.",
+  "main": "./lib/index.js",
+  "files": [
+    "lib/core/*",
+    "lib/index.*"
+  ],
+  "scripts": {
+    "dev": "rollup -c --watch",
+    "start": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saber2pr/use-reducer.git"
+  },
+  "keywords": [
+    "useReducer",
+    "Store",
+    "getState"
+  ],
+  "author": "saber2pr",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.3",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.3",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
+  },
+  "devDependencies": {
+    "rollup": "^1.1.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "typescript": "^3.2.1"
+  }
+}
