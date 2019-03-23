@@ -1,6 +1,6 @@
 {
   "name": "@saber2pr/use-reducer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "useReducer & getState.",
   "main": "./lib/index.js",
   "files": [
