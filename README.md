@@ -12,7 +12,7 @@ export const initState = {
   delta: 1
 }
 
-export const [getState, useReducer] = createStore(state)
+export const [getState, useReducer] = createStore(initState)
 
 // useReducer
 const [state, dispatch] = useReducer(reducer, initialState)
