@@ -3,7 +3,7 @@ import { useReducer } from './store/store'
 import { delta } from './store/delta'
 
 export const Delta = ({ init }: { init: number }) => {
-  const [state, dispatch] = useReducer(delta, init)
+  const [state, dispatch] = useReducer(delta, init, { type: 'change' })
   return (
     <div>
       delta:{state}

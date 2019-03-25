@@ -7,15 +7,16 @@ npm i @saber2pr/use-reducer
 # API
 
 ```ts
-const state = {
-  div1: 100,
-  div2: 1
+export const initState = {
+  current: 100,
+  delta: 1
 }
 
 export const [getState, useReducer] = createStore(state)
 
 // useReducer
-const [state, dispatch] = useReducer(reducer, initState)
+const [state, dispatch] = useReducer(reducer, initialState)
+// const [state, dispatch] = useReducer(reducer, initialState, initialAction)
 
 // getState
 const globalState = getState()

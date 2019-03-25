@@ -12,7 +12,8 @@ export type dispatch<A> = (action: A) => void
 
 export type useReducer<S> = <A>(
   reducer: Reducer<S, A>,
-  initialState: S
+  initialState: S,
+  initialAction?: A
 ) => [S, dispatch<A>]
 
 /**
@@ -29,15 +30,19 @@ export function createStore<S>(
   const __STORE: S = initialState
   const getState: getState<S> = () => __STORE
 
-  const useReducer: useReducer<S[keyof S]> = (reducer, initialState) => {
-    const [state, setState] = React.useState(initialState)
-    return [
-      state,
-      action =>
-        setState(
-          (__STORE[reducer.name] = reducer(state || initialState, action))
-        )
-    ]
+  const useReducer: useReducer<S[keyof S]> = (
+    reducer,
+    initialState,
+    initialAction?
+  ) => {
+    const initState = initialAction
+      ? reducer(initialState, initialAction)
+      : initialState
+
+    const [state, setState] = React.useState(initState)
+    __STORE[reducer.name] = state
+
+    return [state, action => setState(reducer(state, action))]
   }
 
   return [getState, useReducer]
